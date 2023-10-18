@@ -16,10 +16,6 @@ body {
     align-items: center;
 }
 
-.account {
-    align-items: right;
-}
-
 .homeIcon {
     width: 30px;
     align-self: center;
