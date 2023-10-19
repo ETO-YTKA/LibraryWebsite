@@ -5,7 +5,7 @@ $middleName = $_POST['middleName'];
 $login = $_POST['login'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-$conn = mysqli_connect("localhost", "root", "", "users");
+$conn = mysqli_connect("localhost", "root", "", "books");
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

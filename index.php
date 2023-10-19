@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<?php require_once("includes/connection.php"); ?>
+<?php include("includes/booksGeneration.php")?>
 
 
 <html>
@@ -19,13 +19,18 @@ session_start();
         <div class="header">
             <div>                
                 <h1>Библиопека</h1>  
-            </div>           
-            <input type="text" id="search" placeholder="Поиск">     
+            </div>
+            <form method="post">
+
+                <input type="text" id="search" placeholder="Поиск">
+                <button type="submit"></button>
+            </form>
+
         </div>
 
         <div class="gridBooks" id="bookGrid">
-
-            <?php include("includes/booksGeneration.php") ?>
+<!--            --><?php //include("includes/search.php") ?>
+            <?php booksGen(); ?>
 
         </div>
     </div>

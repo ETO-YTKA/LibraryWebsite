@@ -1,12 +1,16 @@
 <?php
-global $con;
+$conn = mysqli_connect("localhost", "root", "", "books");
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
 if (isset($_POST["login"])) {
     if (!empty($_POST['login']) && !empty($_POST['password'])) {
         $login = htmlspecialchars($_POST['login']);
         $password = htmlspecialchars($_POST['password']);
 
-        $query = mysqli_query($con, "SELECT * FROM users WHERE login='$login'");
+        $query = mysqli_query($conn, "SELECT * FROM users WHERE login='$login'");
         $numRows = mysqli_num_rows($query);
         if ($numRows != 0) {
             $row = mysqli_fetch_assoc($query);
@@ -18,7 +22,7 @@ if (isset($_POST["login"])) {
                 header("Location: index.php");
             }
         } else {
-            echo "Invalid username or password!";
+            header();
         }
     } else {
         echo "All fields are required!";

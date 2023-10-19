@@ -1,5 +1,4 @@
 <?php session_start();?>
-<?php require_once("includes/connection.php"); ?>
 <?php require_once("includes/userLogin.php"); ?>
 
 <html lang="en">

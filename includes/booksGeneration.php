@@ -1,19 +1,26 @@
 <?php
-global $con;
+function booksGen($searchCond = '') {
+    $conn = mysqli_connect("localhost", "root", "", "books");
 
-$query =mysqli_query($con, "SELECT * FROM books");
-foreach ($query as $row) {
-    $title = $row['title'];
-    $author = $row['author'];
-    $cover = $row['cover'];
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 
-    echo "
+    $query =mysqli_query($conn, "SELECT * FROM books where title like '%$searchCond%'");
+    foreach ($query as $row) {
+        $id = $row['id'];
+        $title = $row['title'];
+        $author = $row['author'];
+        $cover = $row['cover'];
+
+        echo "
         <div class='bookCard'>
-            <a href='bookPage.php?title=$title' class='bookCardContent'>
-                <img src='assets/img/$cover' class='coverPreview'>
+            <a href='bookPage.php?title=$id' class='bookCardContent'>
+                <img src='assets/img/$cover' class='coverPreview' alt=$title>
                 <h2>$title</h2>
                 <p>$author</p>
             </a>
         </div>
               ";
+    }
 }
