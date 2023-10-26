@@ -15,7 +15,7 @@ function booksGen($searchCond = '') {
 
         echo "
         <div class='bookCard'>
-            <a href='bookPage.php?title=$id' class='bookCardContent'>
+            <a href='bookPage.php?id=$id' class='bookCardContent'>
                 <img src='assets/img/$cover' class='coverPreview' alt=$title>
                 <h2>$title</h2>
                 <p>$author</p>

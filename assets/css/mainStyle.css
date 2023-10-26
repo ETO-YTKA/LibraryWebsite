@@ -1,0 +1,26 @@
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    font-family: "Dodo Rounded", serif;
+}
+
+.topBar {
+    background-color: #131924;
+    padding-right: 10px;
+    padding-Left: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.homeIcon {
+    width: 30px;
+    align-self: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
