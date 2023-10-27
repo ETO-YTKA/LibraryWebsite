@@ -1,12 +1,12 @@
 <?php
-function booksGen($searchCond = '') {
+function booksGen($searchCond) {
     $conn = mysqli_connect("localhost", "root", "", "books");
 
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $query =mysqli_query($conn, "SELECT * FROM books where title like '%$searchCond%'");
+    $query =mysqli_query($conn, "select * from books where title like '%$searchCond%' or author like '%$searchCond%'");
     foreach ($query as $row) {
         $id = $row['id'];
         $title = $row['title'];

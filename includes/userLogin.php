@@ -17,8 +17,8 @@ if (isset($_POST["login"])) {
             $dbPassword = $row['password'];
 
             if (password_verify($password, $dbPassword)) {
-                $firstName = $row['firstName'];
-                setcookie("firstName", $firstName);
+                $_SESSION['firstName'] = $row['firstName'];
+                $_SESSION['isAdmin'] =  boolval($row['admin']);
                 header("Location: index.php");
             }
         } else {

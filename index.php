@@ -1,8 +1,7 @@
 <?php
 session_start();
+include("includes/booksGeneration.php");
 ?>
-<?php include("includes/booksGeneration.php")?>
-
 
 <html>
 <head>
@@ -10,7 +9,6 @@ session_start();
     <title>Библиопека</title>
     <link rel="stylesheet" href="assets/css/indexStyle.css">
     <link rel="stylesheet" href="assets/css/mainStyle.css">
-    <link href="https://db.onlinewebfonts.com/c/9b424ab5e96ee96f675c922ff9c6aff3?family=Dodo+Rounded" rel="stylesheet">
 </head>
 <body>
 
@@ -19,21 +17,44 @@ session_start();
 
         <div class="header">
             <div>                
-                <h1>Библиопека</h1>  
+                <h1>Библиотека</h1>
             </div>
-            <form method="post">
-
-                <input type="text" id="search" placeholder="Поиск">
-                <button type="submit"></button>
+            <form method="post" class="searchBar">
+                <input type="text" id="search" name="search" placeholder="Поиск">
+                <button type="submit" class="searchButton">
+                    <img class="" src="assets/img/searchIcon.png" alt="поиск">
+                </button>
             </form>
 
         </div>
 
         <div class="gridBooks" id="bookGrid">
-<!--            --><?php //include("includes/search.php") ?>
-            <?php booksGen(); ?>
+            <?php
+            if ($_SESSION['isAdmin']) {
+                include ("includes/newBook.php");
+            }
 
+            booksGen('');
+
+            include ("includes/search.php")
+            ?>
         </div>
+
+        <div class="popUp" id="popUp">
+            <div class="popUpMain">
+                <form method="post" enctype="multipart/form-data">
+                    <input type="text" id="newTitle" name="newTitle" placeholder="Введите название книги" class="formGroup" required>
+                    <input type="text" id="newAuthor" name="newAuthor" placeholder="Введите имя автора" class="formGroup">
+                    <input type="file" accept="image/png" id="newCover" name="newCover" placeholder="Загрузите изображение" class="formGroup" required>
+                    <textarea id="newDescription" name="newDescription" placeholder="Введите описание" class="formGroup" required></textarea>
+                    <button type="submit">Создать</button>
+                </form>
+
+                <button id="closePopUp" class="modalClose">&#10006;</button>
+            </div>
+        </div>
+
+        <script src="assets/js/openPopUp.js"></script>
     </div>
 
 </body>

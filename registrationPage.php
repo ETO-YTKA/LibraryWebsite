@@ -1,10 +1,11 @@
+<?php session_start();?>
+
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
     <link rel="stylesheet" href="assets/css/regAndLoginPages.css">
     <link rel="stylesheet" href="assets/css/mainStyle.css">
-    <link href="https://db.onlinewebfonts.com/c/9b424ab5e96ee96f675c922ff9c6aff3?family=Dodo+Rounded" rel="stylesheet">
 </head>
 <body>
 

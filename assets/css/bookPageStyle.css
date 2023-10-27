@@ -12,6 +12,7 @@
 }
 
 .main {
+    max-height: 500px;
     max-width: 70%;
     margin: 20px auto;
     background-color: #fff;
@@ -20,6 +21,7 @@
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 50px 35px auto;
+    border-radius: 25px;
 }
 
 .bookCover {

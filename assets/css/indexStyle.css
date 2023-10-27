@@ -19,17 +19,40 @@
 .header input[type="text"] {
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-size: 16px;
     width: 80%;
     max-width: 400px;
+}
+
+.formInput {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.searchButton {
+    border:none;
+    cursor: pointer;
+    height: 38px;
+    width: 38px;
+    border-radius: 38px;
+    padding: 0;
 }
 
 .header p {
     font-size: 18px;
     margin-bottom: 10px;
     align-self: center;
-    
 }
 
 .gridBooks {
@@ -41,11 +64,17 @@
 }
 
 .bookCard {
-    width: auto;
+    width: 200px;
     padding: 20px;
-    margin: 20px auto;
+    margin: 0 auto;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    position: relative;
+}
+
+.bookCard:hover {
+    background: darkgrey;
 }
 
 .bookCardContent {
@@ -80,4 +109,84 @@
 
 .coverPreview {
     width: 200px;
+}
+
+.addBook {
+    width: 240px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    cursor: pointer;
+}
+
+.plus {
+    background: #c6ebfc;
+    height: 200px;
+    width: 20px;
+    position: relative;
+    border-radius: 25px;
+
+}
+
+.plus:after {
+    background: #c6ebfc;
+    content: "";
+    height: 20px;
+    width: 180px;
+    left: -80px;
+    top: 90px;
+    border-radius: 25px;
+    position: absolute;
+}
+
+.popUp {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    padding: 30px;
+    overflow-y: auto;
+    visibility: hidden;
+}
+
+.popUpMain {
+    position: relative;
+    max-width: 700px;
+    background-color: #fff;
+    margin: auto;
+    color: #000;
+    border-radius: 25px;
+    padding: 30px 60px 60px;
+    cursor: default;
+}
+
+.modalClose {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    outline: 1px solid transparent;
+    outline-offset: 3px;
+    transition: outline-color .15s ease-in-out;
+    border-radius: 3px;
+    padding: 0;
+    text-align: center;
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+textarea {
+    max-height: 300px;
+    resize: none;
 }
