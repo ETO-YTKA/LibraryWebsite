@@ -6,7 +6,7 @@ include("includes/booksGeneration.php");
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Библиопека</title>
+    <title>Библиотека</title>
     <link rel="stylesheet" href="assets/css/indexStyle.css">
     <link rel="stylesheet" href="assets/css/mainStyle.css">
 </head>
@@ -19,13 +19,13 @@ include("includes/booksGeneration.php");
             <div>                
                 <h1>Библиотека</h1>
             </div>
+
             <form method="post" class="searchBar">
                 <input type="text" id="search" name="search" placeholder="Поиск">
                 <button type="submit" class="searchButton">
                     <img class="" src="assets/img/searchIcon.png" alt="поиск">
                 </button>
             </form>
-
         </div>
 
         <div class="gridBooks" id="bookGrid">
@@ -42,12 +42,25 @@ include("includes/booksGeneration.php");
 
         <div class="popUp" id="popUp">
             <div class="popUpMain">
-                <form method="post" enctype="multipart/form-data">
+                <form enctype="multipart/form-data" method="post" class="formContainer" id="form">
                     <input type="text" id="newTitle" name="newTitle" placeholder="Введите название книги" class="formGroup" required>
-                    <input type="text" id="newAuthor" name="newAuthor" placeholder="Введите имя автора" class="formGroup">
-                    <input type="file" accept="image/png" id="newCover" name="newCover" placeholder="Загрузите изображение" class="formGroup" required>
+
+                    <select id="newAuthor" name="newAuthor" class="authorSelect" required>
+                        <?php include("includes/selectOptions.php") ?>
+                    </select>
+
+                    <input type="text" id="newFirstName" name="newFirstName" class="formAuthor" placeholder="Введите имя автора" required>
+                    <input type="text" id="newLastName" name="newLastName" class="formAuthor" placeholder="Введите фамилию автора" required>
+                    <input type="text" id="newMiddleName" name="middleName" class="formAuthor" placeholder="Введите отчество автора (если имеется)" required>
+
+                    <div class="authorCheckBox">
+                        <input type="checkbox" id="newAuthorCheck" name="newAuthorCheck" value="1">
+                        <label for="newAuthorCheck">новый автор</label>
+                    </div>
+
+                    <input type="file" accept="image/webp" id="newCover" name="newCover" class="formGroup" required>
                     <textarea id="newDescription" name="newDescription" placeholder="Введите описание" class="formGroup" required></textarea>
-                    <button type="submit">Создать</button>
+                    <button type="submit" class="popUpButton">Создать</button>
                 </form>
 
                 <button id="closePopUp" class="modalClose">&#10006;</button>
@@ -55,6 +68,7 @@ include("includes/booksGeneration.php");
         </div>
 
         <script src="assets/js/openPopUp.js"></script>
+        <script src="assets/js/newAuthorCheckBox.js"></script>
     </div>
 
 </body>

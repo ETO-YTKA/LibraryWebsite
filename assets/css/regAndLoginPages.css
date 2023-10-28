@@ -1,30 +1,24 @@
 .container {
     margin: 20px auto;
-    background-color: #fff;
+    background-color: #1b4943;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     max-width: 400px;
-    border: 1px solid #ccc;
     border-radius: 25px;
+    border: none;
+    outline: none;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: #e7e7e7;
 }
 
 form {
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
 }
 
 .invisible {
@@ -34,23 +28,21 @@ input[type="password"] {
 button {
     margin: 0 auto;
     display: block;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #e7e7e7;
+    color: #000000;
     border: none;
     padding: 10px 20px;
-    border-radius: 3px;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
-}
-
-button:hover {
-    background-color: #0056b3;
+    font-family: "Roboto regular", sans-serif;
 }
 
 .linkToReg {
     padding-top: 5px;
     padding-bottom: 10px;
     font-size: 14px;
+    width: 0;
 }
 
 .errorLabel {

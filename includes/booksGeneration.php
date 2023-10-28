@@ -1,12 +1,20 @@
 <?php
 function booksGen($searchCond) {
-    $conn = mysqli_connect("localhost", "root", "", "books");
+    $conn = mysqli_connect("127.0.0.1", "root", "", "books");
 
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $query =mysqli_query($conn, "select * from books where title like '%$searchCond%' or author like '%$searchCond%'");
+    $query =mysqli_query($conn, "select b.id,t.title,
+        IF(middleName is not null, CONCAT(SUBSTRING(firstName, 1, 1), '. ', SUBSTRING(middleName, 1, 1), '. ', lastName),
+          CONCAT(SUBSTRING(firstName, 1, 1), '. ', lastName)) as author,
+        b.cover,b.description
+        from books b
+        join authors a on b.authorId = a.id
+        join titles t  on b.titleId = t.id
+        where title like '%$searchCond%' or lastName like '%$searchCond%'");
+
     foreach ($query as $row) {
         $id = $row['id'];
         $title = $row['title'];
@@ -16,7 +24,7 @@ function booksGen($searchCond) {
         echo "
         <div class='bookCard'>
             <a href='bookPage.php?id=$id' class='bookCardContent'>
-                <img src='assets/img/$cover' class='coverPreview' alt=$title>
+                <img src='assets/img/covers/$cover' class='coverPreview' alt=$title>
                 <h2>$title</h2>
                 <p>$author</p>
             </a>
