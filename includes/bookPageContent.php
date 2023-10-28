@@ -33,7 +33,7 @@ if(isset($_GET['id']))
     
         <div class='main'>
             <img src='assets/img/covers/$cover' class='bookCover''>
-            <h2>$title   </h2>
+            <h2>$title</h2>
             <div class='author'>$author</div>
             <div class='description'>$description</div>
         </div>
