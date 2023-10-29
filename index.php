@@ -32,7 +32,7 @@ include ("includes/bookAdd.php");
         <div class="gridBooks" id="bookGrid">
             <?php
             if ($_SESSION['isAdmin']) {
-                include ("includes/newBook.php");
+                include("includes/bookAddButton.php");
             }
 
             booksGen('');
@@ -41,7 +41,10 @@ include ("includes/bookAdd.php");
             ?>
         </div>
 
-        <div class="popUp" id="popUp">
+<?php
+if ($_SESSION["isAdmin"]) {
+    echo '
+    <div class="popUp" id="popUp">
             <div class="popUpMain">
                 <form enctype="multipart/form-data" method="post" class="formContainer">
                     <input type="text" id="newTitle" name="newTitle" placeholder="Введите название книги" class="formGroup" required>
@@ -67,9 +70,11 @@ include ("includes/bookAdd.php");
                 <button id="closePopUp" class="modalClose">&#10006;</button>
             </div>
         </div>
-
         <script src="assets/js/openPopUp.js"></script>
         <script src="assets/js/newAuthorCheckBox.js"></script>
+    ';
+}
+?>
     </div>
 
 </body>
