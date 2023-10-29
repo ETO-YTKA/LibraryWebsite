@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("includes/booksGeneration.php");
+include ("includes/bookAdd.php");
 ?>
 
 <html>
@@ -42,16 +43,16 @@ include("includes/booksGeneration.php");
 
         <div class="popUp" id="popUp">
             <div class="popUpMain">
-                <form enctype="multipart/form-data" method="post" class="formContainer" id="form">
+                <form enctype="multipart/form-data" method="post" class="formContainer">
                     <input type="text" id="newTitle" name="newTitle" placeholder="Введите название книги" class="formGroup" required>
 
                     <select id="newAuthor" name="newAuthor" class="authorSelect" required>
                         <?php include("includes/selectOptions.php") ?>
                     </select>
 
-                    <input type="text" id="newFirstName" name="newFirstName" class="formAuthor" placeholder="Введите имя автора" required>
-                    <input type="text" id="newLastName" name="newLastName" class="formAuthor" placeholder="Введите фамилию автора" required>
-                    <input type="text" id="newMiddleName" name="middleName" class="formAuthor" placeholder="Введите отчество автора (если имеется)" required>
+                    <input type="text" id="newFirstName" name="newFirstName" class="formAuthor" placeholder="Введите имя автора">
+                    <input type="text" id="newLastName" name="newLastName" class="formAuthor" placeholder="Введите фамилию автора">
+                    <input type="text" id="newMiddleName" name="newMiddleName" class="formAuthor" placeholder="Введите отчество автора (если имеется)">
 
                     <div class="authorCheckBox">
                         <input type="checkbox" id="newAuthorCheck" name="newAuthorCheck" value="1">

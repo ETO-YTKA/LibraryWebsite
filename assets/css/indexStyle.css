@@ -55,6 +55,7 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 50px;
     margin: 20px auto;
+    align-items: start;
 }
 
 .bookCard {
@@ -104,7 +105,8 @@
 }
 
 .coverPreview {
-    border-radius: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     width: 200px;
 }
 
@@ -121,6 +123,7 @@
     justify-content: center;
     border:none;
     cursor: pointer;
+    align-self: normal;
 }
 
 .addBook:hover {
@@ -185,6 +188,7 @@
     display: block;
     width: 30px;
     height: 30px;
+    color: #e7e7e7;
 }
 
 .authorSelect {

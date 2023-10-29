@@ -12,7 +12,6 @@
 }
 
 .main {
-    max-height: 500px;
     max-width: 70%;
     margin: 20px auto;
     background-color: #1b4943;
@@ -25,11 +24,13 @@
 }
 
 .bookCover {
-    max-height: 50%;
+    height: 500px;
     margin-right: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     grid-column: 1;
     grid-row: 1 / 4;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
 }
 
 h2 {
