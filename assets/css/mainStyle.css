@@ -15,6 +15,20 @@ body {
     align-items: center;
 }
 
+.logoutButton {
+    background-color: #1F2833;
+    color: #e7e7e7;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "Roboto regular", sans-serif;
+}
+
+.topBarMenu {
+    display: flex;
+    align-items: baseline;
+}
+
 .homeIcon {
     width: 30px;
     align-self: center;
@@ -41,6 +55,7 @@ a {
     border: none;
     font-family: "Roboto regular", sans-serif;
     background: #e7e7e7;
+    outline: none;
 }
 
 .authorCheckBox {
