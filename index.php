@@ -41,9 +41,6 @@ include ("includes/bookAdd.php");
             ?>
         </div>
 
-<?php
-if ($_SESSION["isAdmin"]) {
-    echo '
     <div class="popUp" id="popUp">
             <div class="popUpMain">
                 <form enctype="multipart/form-data" method="post" class="formContainer">
@@ -72,9 +69,6 @@ if ($_SESSION["isAdmin"]) {
         </div>
         <script src="assets/js/openPopUp.js"></script>
         <script src="assets/js/newAuthorCheckBox.js"></script>
-    ';
-}
-?>
     </div>
 
 </body>

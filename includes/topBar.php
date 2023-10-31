@@ -7,7 +7,7 @@
             <a>Здравствуйте, <span>" . $_SESSION['firstName'] . "</span>!</a>
             <form style='margin: 0' method='post'>
                 <input type='radio' style='display: none' name='logout' value='1' checked>
-                <button type='submit' class='logoutButton'>выйти</button>
+                <button type='submit' class='logoutButton' onclick=''>выйти</button>
             </form>
             
         </div>";
