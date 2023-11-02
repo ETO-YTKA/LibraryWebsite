@@ -4,14 +4,9 @@
     <?php
     if (!empty($_SESSION['firstName'])) {echo "
         <div class='topBarMenu'>
-            <a>Здравствуйте, <span>" . $_SESSION['firstName'] . "</span>!</a>
-            <form style='margin: 0' method='post'>
-                <input type='radio' style='display: none' name='logout' value='1' checked>
-                <button type='submit' class='logoutButton' onclick=''>выйти</button>
-            </form>
-            
+            <a>Здравствуйте, <span>" . $_SESSION['firstName'] . "</span>!</a>        
+            <a href='includes/logout.php'>Выход</a>   
         </div>";
-        include "includes/userLogout.php";
     }
     else {
         echo "<a href='loginPage.php'>Войти</a>";

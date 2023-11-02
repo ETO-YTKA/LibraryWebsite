@@ -7,8 +7,10 @@ if (!$conn) {
 
 if (isset($_POST['search'])) {
     echo '<script src="../assets/js/removeBookGridChild.js"></script>';
-    if ($_SESSION['isAdmin']) {
-        include("includes/bookAddButton.php");
+    if (isset($_SESSION['isAdmin'])) {
+        if ($_SESSION['isAdmin']) {
+            include("includes/bookAddButton.php");
+        }
     }
     $search = $_POST['search'];
     booksGen($search);

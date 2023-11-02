@@ -31,8 +31,10 @@ include ("includes/bookAdd.php");
 
         <div class="gridBooks" id="bookGrid">
             <?php
-            if ($_SESSION['isAdmin']) {
-                include("includes/bookAddButton.php");
+            if (isset($_SESSION['isAdmin'])) {
+                if ($_SESSION['isAdmin']) {
+                    include("includes/bookAddButton.php");
+                }
             }
 
             booksGen('');

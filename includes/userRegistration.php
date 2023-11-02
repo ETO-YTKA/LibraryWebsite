@@ -18,7 +18,7 @@ if (mysqli_num_rows($userCheck) > 0) {
 
 $sql = "INSERT INTO users (firstName, lastName, middleName, login, password) VALUES ('$firstName', '$lastName', '$middleName', '$login', '$password')";
 if(mysqli_query($conn, $sql)){
-    header("Location: /loginPage.php");
+    header("Location: ../loginPage.php");
 } else{
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
