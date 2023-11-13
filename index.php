@@ -4,7 +4,7 @@ include("includes/booksGeneration.php");
 include ("includes/bookAdd.php");
 ?>
 
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Библиотека</title>
@@ -12,22 +12,7 @@ include ("includes/bookAdd.php");
     <link rel="stylesheet" href="assets/css/mainStyle.css">
 </head>
 <body>
-
-    <div class="gridMain">
-        <?php include("includes/topBar.php")?>
-
-        <div class="header">
-            <div>                
-                <h1>Библиотека</h1>
-            </div>
-
-            <form method="post" class="searchBar">
-                <input type="text" id="search" name="search" placeholder="Поиск">
-                <button type="submit" class="searchButton">
-                    <img class="" src="assets/img/searchIcon.png" alt="поиск">
-                </button>
-            </form>
-        </div>
+        <?php include("includes/header.php") ?>
 
         <div class="gridBooks" id="bookGrid">
             <?php
@@ -71,7 +56,5 @@ include ("includes/bookAdd.php");
         </div>
         <script src="assets/js/openPopUp.js"></script>
         <script src="assets/js/newAuthorCheckBox.js"></script>
-    </div>
-
 </body>
 </html>

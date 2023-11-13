@@ -27,15 +27,13 @@ if(isset($_GET['id']))
         $description = $row['description'];
 
         echo "
-        <div class='header'>
-            <h1>$title</h1>
-        </div>
-    
-        <div class='main'>
-            <img src='assets/img/covers/$cover' class='bookCover''>
-            <h2>$title</h2>
-            <div class='author'>$author</div>
-            <div class='description'>$description</div>
+        <div class='mainContent'>
+            <div class='main'>
+                <img src='assets/img/covers/$cover' class='bookCover' alt='обложка'>
+                <h2>$title</h2>
+                <div class='author'>$author</div>
+                <div class='description'>$description</div>
+            </div>
         </div>
         ";
     } else {

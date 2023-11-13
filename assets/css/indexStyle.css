@@ -1,61 +1,12 @@
-.gridMain {
-    display: grid;
-    grid-template-rows: auto 150px 1fr;
-}
-
-.header {
-    grid-row: 2;
-    background-color: #1F2833;
-    color: #fff;
-    text-align: center;
-}
-
-.header h1 {
-    font-size: 36px;
-    text-transform: uppercase;
-    color: #e7e7e7;
-}
-
-.header input[type="text"] {
-    padding: 10px;
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    width: 80%;
-    max-width: 400px;
-    outline: none;
-    background: #e7e7e7;
-}
-
-.searchBar {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.searchButton {
-    border:none;
-    cursor: pointer;
-    height: 38px;
-    width: 38px;
-    border-radius: 38px;
-    padding: 0;
-    background: #e7e7e7;
-}
-
-.header p {
-    font-size: 18px;
-    margin-bottom: 10px;
-    align-self: center;
-}
-
 .gridBooks {
     width: 70%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 50px;
-    margin: 20px auto;
+    grid-row-gap: 20px;
+    column-gap: 42px;
+    margin: auto;
     align-items: start;
+    padding-top: 89px;
 }
 
 .bookCard {
@@ -159,6 +110,7 @@
     padding: 30px;
     overflow-y: auto;
     visibility: hidden;
+    z-index: 2;
 }
 
 .popUpMain {

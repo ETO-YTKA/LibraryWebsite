@@ -1,6 +1,6 @@
-<?php session_start();?>
+<?php session_start()?>
 
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/mainStyle.css">
 </head>
 <body>
-    <?php include("includes/topBar.php")?>
+    <?php include("includes/header.php") ?>
     <?php include("includes/bookPageContent.php")?>
 </body>
 </html>
