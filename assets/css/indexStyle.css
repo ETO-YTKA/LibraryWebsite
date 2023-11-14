@@ -1,3 +1,10 @@
+.searchResult {
+    color: #e7e7e7;
+    padding-bottom: 20px;
+    padding-left: 15%;
+    font-size: 18px;
+}
+
 .gridBooks {
     width: 70%;
     display: grid;
@@ -6,7 +13,6 @@
     column-gap: 42px;
     margin: auto;
     align-items: start;
-    padding-top: 89px;
 }
 
 .bookCard {

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("includes/booksGeneration.php");
+include ("includes/booksGeneration.php");
 include ("includes/bookAdd.php");
 ?>
 
@@ -12,26 +12,28 @@ include ("includes/bookAdd.php");
     <link rel="stylesheet" href="assets/css/mainStyle.css">
 </head>
 <body>
-        <?php include("includes/header.php") ?>
+    <?php include("includes/header.php") ?>
 
-        <div class="gridBooks" id="bookGrid">
-            <?php
-            if (isset($_SESSION['isAdmin'])) {
-                if ($_SESSION['isAdmin']) {
-                    include("includes/bookAddButton.php");
-                }
+<!--    <div class="mainContent searchResult" id="searchResult">По запросу "" найдено: результатов</div>-->
+    <?php include ("includes/searchResult.php")?>
+    <div class="gridBooks" id="bookGrid">
+        <?php
+        if (isset($_SESSION['isAdmin'])) {
+            if ($_SESSION['isAdmin']) {
+                include("includes/bookAddButton.php");
             }
+        }
 
-            booksGen('');
+        booksGen('');
 
-            include ("includes/search.php")
-            ?>
-        </div>
+        include ("includes/search.php")
+        ?>
+    </div>
 
     <div class="popUp" id="popUp">
             <div class="popUpMain">
                 <form enctype="multipart/form-data" method="post" class="formContainer">
-                    <input type="text" id="newTitle" name="newTitle" placeholder="Введите название книги" class="formGroup" required>
+                    <input type="text" name="newTitle" placeholder="Введите название книги" class="formGroup" required>
 
                     <select id="newAuthor" name="newAuthor" class="authorSelect" required>
                         <?php include("includes/selectOptions.php") ?>
@@ -46,15 +48,15 @@ include ("includes/bookAdd.php");
                         <label for="newAuthorCheck">новый автор</label>
                     </div>
 
-                    <input type="file" accept="image/webp" id="newCover" name="newCover" class="formGroup" required>
-                    <textarea id="newDescription" name="newDescription" placeholder="Введите описание" class="formGroup" required></textarea>
+                    <input type="file" accept="image/webp" name="newCover" class="formGroup" required>
+                    <textarea name="newDescription" placeholder="Введите описание" class="formGroup" required></textarea>
                     <button type="submit" class="popUpButton">Создать</button>
                 </form>
 
                 <button id="closePopUp" class="modalClose">&#10006;</button>
             </div>
-        </div>
-        <script src="assets/js/openPopUp.js"></script>
-        <script src="assets/js/newAuthorCheckBox.js"></script>
+    </div>
+    <script src="assets/js/openPopUp.js"></script>
+    <script src="assets/js/newAuthorCheckBox.js"></script>
 </body>
 </html>

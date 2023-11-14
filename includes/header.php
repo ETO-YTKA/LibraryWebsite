@@ -1,9 +1,9 @@
 <div class="header">
     <a href="index.php"><h3>Библиотека</h3></a>
 
-    <form method="post" class="searchBar">
-        <input type="text" id="search" name="search" placeholder="Поиск">
-        <button type="submit" class="searchButton" id="searchButton">
+    <form method="get" class="searchBar" action="index.php">
+        <input type="text" name="search" placeholder="Поиск">
+        <button type="submit" class="searchButton">
             <img class="" src="assets/img/searchIcon.png" alt="поиск">
         </button>
     </form>
@@ -11,8 +11,7 @@
     <?php
     if (!empty($_SESSION['firstName'])) {echo "
         <div class='HeaderMenu'>
-            <a>Здравствуйте, <span>" . $_SESSION['firstName'] . "</span>!</a>        
-            <a href='includes/logout.php'>Выход</a>   
+            <a href='includes/logout.php' class='account'>Выход</a>   
         </div>";
     }
     else {

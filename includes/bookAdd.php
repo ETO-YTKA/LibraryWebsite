@@ -5,8 +5,8 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-if (isset($_POST['newTitle']) && isset($_SERVER['idAdmin'])) {
-    if ($_SERVER['idAdmin']) {
+if (isset($_POST['newTitle']) && isset($_SESSION['isAdmin'])) {
+    if ($_SESSION['isAdmin']) {
         $title = $_POST['newTitle'];
         $query = mysqli_query($conn, "select title from titles where title = '$title'");
 

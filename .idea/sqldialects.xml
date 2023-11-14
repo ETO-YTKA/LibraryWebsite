@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/includes/bookPageContent.php" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/includes/booksGeneration.php" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/includes/login.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/includes/searchResult.php" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/includes/selectOptions.php" dialect="MySQL" />
   </component>
 </project>

@@ -5,6 +5,10 @@ body {
     font-family: "Roboto regular", sans-serif;
 }
 
+.mainContent {
+    padding-top: 89px;
+}
+
 .header {
     background-color: #1F2833;
     color: #e7e7e7;

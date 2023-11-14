@@ -1,5 +1,6 @@
 <?php
-function booksGen($searchCond) {
+function booksGen($searchCond): void
+{
     $conn = mysqli_connect("127.0.0.1", "root", "", "books");
 
     if (!$conn) {
@@ -15,6 +16,7 @@ function booksGen($searchCond) {
         join titles t  on b.titleId = t.id
         where title like '%$searchCond%' or lastName like '%$searchCond%'");
 
+    $_POST['numResult'] = mysqli_num_rows($query);
     foreach ($query as $row) {
         $id = $row['id'];
         $title = $row['title'];
