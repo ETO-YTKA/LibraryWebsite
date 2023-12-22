@@ -15,7 +15,10 @@ include ("includes/bookAdd.php");
     <?php include("includes/header.php") ?>
 
 <!--    <div class="mainContent searchResult" id="searchResult">По запросу "" найдено: результатов</div>-->
-    <?php include ("includes/searchResult.php")?>
+    <?php
+    include("includes/searchResult.php");
+    searchResult();
+    ?>
     <div class="gridBooks" id="bookGrid">
         <?php
         if (isset($_SESSION['isAdmin'])) {
@@ -26,7 +29,7 @@ include ("includes/bookAdd.php");
 
         booksGen('');
 
-        include ("includes/search.php")
+        include("includes/searchButton.php")
         ?>
     </div>
 

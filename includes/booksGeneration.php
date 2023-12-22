@@ -7,7 +7,7 @@ function booksGen($searchCond): void
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $query =mysqli_query($conn, "select b.id,t.title,
+    $query = mysqli_query($conn, "select b.id,t.title,
         IF(middleName is not null, CONCAT(SUBSTRING(firstName, 1, 1), '. ', SUBSTRING(middleName, 1, 1), '. ', lastName),
           CONCAT(SUBSTRING(firstName, 1, 1), '. ', lastName)) as author,
         b.cover,b.description
@@ -16,7 +16,6 @@ function booksGen($searchCond): void
         join titles t  on b.titleId = t.id
         where title like '%$searchCond%' or lastName like '%$searchCond%'");
 
-    $_POST['numResult'] = mysqli_num_rows($query);
     foreach ($query as $row) {
         $id = $row['id'];
         $title = $row['title'];
